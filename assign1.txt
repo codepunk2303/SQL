@@ -1,0 +1,42 @@
+create table student1(
+    roll_no number(5),
+    name char(20),
+    DOB date,
+    gender char(1),
+    class char(20),
+    college char(20),
+    city char(20),
+    marks number(4)
+    
+);
+
+desc student1;
+
+insert into student1 values(12,'Abhishek','23-DEC-2003','M','COE','TIET','Patna','100');
+insert into student1 values(20,'Aditya','21-JAN-2001','M','COE','PU','Patiala','91');
+insert into student1 values(1,'Nidhi','12-AUG-2003','F','MBBS','AIIMS','Rishikesh','56');
+insert into student1 values(8,'Rose','14-MAR-2004','F','Bcom','DU','Delhi','72');
+insert into student1 values(16,'Sanya','19-JUL-2003','F','COE','TIET','Patiala','26');
+
+select * from student1;
+
+desc student1;
+
+select roll_no, name,class from student1 where city = 'Patiala';
+
+select * from student1 order by marks;
+
+
+update student1 set roll_no = 5 where roll_no = 8; 
+
+
+update student1 set marks = 89 where roll_no = 5;
+select * from student1;
+
+update student1 set name = 'Sanya M.', city = 'Amritsar' where roll_no = 16;
+
+delete from student1 where city = 'Amritsar';
+select * from student1;
+
+delete from student1 where marks<60;
+select * from student1;
